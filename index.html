@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8"><title>UAS Ganjil Sosiologi X</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{--bg:#eef2ff;--card:#fff;--tx:#1e1b4b;--mu:#64748b;--pr:#4f46e5;--pr2:#06b6d4;--ok:#10b981;--dg:#f59e0b;--bad:#ef4444;--ln:#e2e8f0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f172a;--card:#1e293b;--tx:#e2e8f0;--mu:#94a3b8;--ln:#334155}}
+:root[data-theme="dark"]{--bg:#0f172a;--card:#1e293b;--tx:#e2e8f0;--mu:#94a3b8;--ln:#334155}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-user-select:none;user-select:none}
+.wrap{max-width:980px;margin:0 auto;padding:16px}
+.hero{background:linear-gradient(135deg,var(--pr),var(--pr2));color:#fff;border-radius:18px;padding:22px;margin-bottom:14px}
+.hero h1{margin:0 0 4px;font-size:1.5rem}.hero p{margin:0;opacity:.9}
+.card{background:var(--card);border-radius:16px;padding:18px;box-shadow:0 4px 18px #4f46e522;margin-bottom:14px}
+label{display:block;font-weight:600;margin:10px 0 4px;font-size:.9rem}
+input,select,textarea{width:100%;padding:11px 12px;border:2px solid var(--ln);border-radius:10px;background:var(--bg);color:var(--tx);font:inherit;-webkit-user-select:text;user-select:text}
+input:focus{outline:none;border-color:var(--pr)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+button{font:inherit;cursor:pointer;border:0;border-radius:10px;padding:11px 18px;font-weight:600;color:#fff;background:var(--pr)}
+button.s{background:var(--ln);color:var(--tx)}button.d{background:var(--dg)}button.ok{background:var(--ok)}button.b{background:var(--bad)}
+button:disabled{opacity:.45;cursor:not-allowed}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.tm{font-size:1.3rem;font-weight:800;background:var(--pr);color:#fff;border-radius:10px;padding:6px 14px;font-variant-numeric:tabular-nums}.tm.low{background:var(--bad)}
+.lay{display:grid;grid-template-columns:1fr 250px;gap:14px}
+@media(max-width:760px){.lay{grid-template-columns:1fr}.g2{grid-template-columns:1fr}}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:12px;border:2px solid var(--ln);border-radius:12px;margin:8px 0;cursor:pointer}
+.opt:hover{border-color:var(--pr2)}.opt.on{border-color:var(--pr);background:#4f46e51f}
+.opt b{background:var(--ln);color:var(--tx);border-radius:8px;min-width:28px;text-align:center}.opt.on b{background:var(--pr);color:#fff}
+.q{font-size:1.05rem}.q img{max-width:100%;border-radius:10px;display:block;margin:8px 0}
+.nav{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.nav button{flex:1}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}
+.n{padding:8px 0;text-align:center;border-radius:9px;background:var(--ln);color:var(--tx);font-weight:700;cursor:pointer;border:2px solid transparent}
+.n.a{background:var(--ok);color:#fff}.n.r{background:var(--dg);color:#fff}.n.c{border-color:var(--pr);box-shadow:0 0 0 2px var(--pr)}
+.lg{display:flex;gap:10px;flex-wrap:wrap;font-size:.78rem;color:var(--mu);margin-top:10px}.lg i{display:inline-block;width:12px;height:12px;border-radius:4px;vertical-align:-1px;margin-right:4px}
+.score{text-align:center;font-size:4rem;font-weight:900;background:linear-gradient(135deg,var(--pr),var(--pr2));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.1}
+.pb{border-left:5px solid var(--bad);padding:10px 12px;background:var(--bg);border-radius:8px;margin:10px 0}.pb.t{border-color:var(--ok)}
+.pb .e{color:var(--mu);font-size:.92rem;margin-top:4px}
+.ov{position:fixed;inset:0;background:#0f172af2;color:#fff;display:none;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:99}
+.ov div{max-width:420px}.ov h2{color:#fbbf24}
+table{width:100%;border-collapse:collapse;font-size:.88rem}th,td{padding:8px;border-bottom:1px solid var(--ln);text-align:left}
+.tw{overflow-x:auto}.hide{display:none!important}.err{color:var(--bad);font-weight:600;margin-top:8px}.mu{color:var(--mu);font-size:.85rem}
+</style></head><body>
+<div class="wrap">
+<div id="login">
+ <div class="hero"><h1>📚 Ujian Akhir Semester Ganjil</h1><p>Sosiologi · Kelas X · 30 soal pilihan ganda</p></div>
+ <div class="card"><div class="g2">
+  <div><label>Nama Siswa</label><input id="fn" autocomplete="off"></div>
+  <div><label>Kelas</label><input id="fk" placeholder="contoh: X IPS 1" autocomplete="off"></div>
+  <div><label>No. Peserta Didik</label><input id="fp" autocomplete="off"></div>
+  <div><label>Asal Sekolah</label><input id="fs" autocomplete="off"></div></div>
+  <label>Token Ujian</label><input id="ft" placeholder="Masukkan token dari guru" autocomplete="off" style="text-transform:uppercase;letter-spacing:3px">
+  <div class="mu" style="margin-top:10px">Aturan: ujian berjalan layar penuh. Berpindah tab atau jendela, atau keluar layar penuh, dicatat sebagai pelanggaran. Pelanggaran ke-3 mengakhiri ujian otomatis.</div>
+  <div id="le" class="err"></div>
+  <div class="top" style="margin-top:12px"><button id="go">Mulai Ujian ▶</button><button id="tg" class="s">🔒 Mode Guru</button></div></div>
+</div>
+
+<div id="exam" class="hide">
+ <div class="card top"><div><b id="who"></b><div class="mu" id="prog"></div></div><div class="tm" id="tm">00:00</div></div>
+ <div class="lay"><div class="card"><div class="mu" id="qn"></div><div class="q" id="qt"></div><div id="qo"></div>
+  <div class="nav"><button class="s" id="pv">◀ Sebelumnya</button><button class="d" id="rg">🚩 Ragu-ragu</button><button id="nx">Selanjutnya ▶</button></div>
+  <div class="nav"><button class="ok" id="fin">✔ Selesai &amp; Kumpulkan</button></div></div>
+ <div class="card"><b>Navigasi Soal</b><div class="grid" id="gr" style="margin-top:10px"></div>
+  <div class="lg"><span><i style="background:var(--ok)"></i>Dijawab</span><span><i style="background:var(--dg)"></i>Ragu-ragu</span><span><i style="background:var(--ln)"></i>Belum</span></div>
+  <div class="mu" style="margin-top:10px">Pelanggaran: <b id="vc">0</b>/3</div></div></div>
+</div>
+
+<div id="result" class="hide">
+ <div class="hero"><h1>🎉 Ujian Selesai</h1><p id="rinfo"></p></div>
+ <div class="card"><div class="mu" style="text-align:center">NILAI AKHIR</div><div class="score" id="sc"></div><div id="rs" class="mu" style="text-align:center"></div></div>
+ <div class="card"><b>Kode Hasil untuk Guru</b><div class="mu">Salin kode ini dan kirim ke guru (WhatsApp), atau tunjukkan layar nilai ini.</div><textarea id="kd" rows="3" readonly style="margin:8px 0"></textarea><button id="cp">📋 Salin Kode</button></div>
+ <div class="card"><h3 style="margin-top:0">Pembahasan Soal</h3><div id="pm"></div></div>
+</div>
+
+<div id="teacher" class="hide">
+ <div class="hero"><h1>👩‍🏫 Mode Guru</h1><p id="tinfo"></p></div>
+ <div class="card"><b>Rekap Hasil Siswa</b><div class="mu">Tempel kode hasil dari siswa, satu kode per baris.</div><textarea id="kin" rows="5" style="margin-top:8px"></textarea>
+ <div class="top" style="margin-top:10px"><button id="an">Proses Kode</button><button class="s" id="kc">Kunci &amp; Pembahasan</button><button class="s" onclick="print()">🖨 Cetak</button><button class="s" id="bk">← Kembali</button></div></div>
+ <div class="card"><div id="kcv" class="hide"></div><div class="tw" id="tw"></div><div id="avg" class="mu" style="margin-top:8px"></div></div>
+</div>
+</div>
+<div class="ov" id="ov"><div><h2 id="ot">⚠ Peringatan</h2><p id="om"></p><button id="ob">Kembali ke ujian</button></div></div>
+
+<script>
+const IMG="data:image/jpeg;base64,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";
+const Q=[
+["Gejala sosial adalah ketidaksesuaian antara unsur-unsur masyarakat atau kebudayaan yang membahayakan kehidupan kelompok masyarakat. Definisi tersebut disampaikan oleh…",["Pitirim A. Sorokin","Soerjono Soekanto","Karl Marx","Max Weber","Koentjaraningrat"],1,"Definisi gejala sosial sebagai ketidaksesuaian unsur masyarakat yang membahayakan kelompok dikemukakan Soerjono Soekanto."],
+["Perhatikan gejala sosial berikut!<br>(1) Korupsi yang dilakukan pejabat negara.<br>(2) Pergaulan bebas remaja di kota besar.<br>(3) Naiknya harga bahan kebutuhan pokok.<br>(4) Munculnya kaum sosialita menyebabkan luasnya ketimpangan sosial.<br>(5) Media sosial sebagai penyebar perilaku konsumtif masyarakat.<br><br>Gejala sosial yang dikaji oleh sosiologi ditunjukkan oleh nomor…",["(1), (2) dan (3)","(1), (2) dan (4)","(1), (3) dan (5)","(2), (4) dan (5)","(3), (4) dan (5)"],3,"Sosiologi mengkaji hubungan antarmanusia: pergaulan bebas, ketimpangan sosial, dan perilaku konsumtif. Korupsi (hukum) dan harga pokok (ekonomi) lebih ke kajian lain."],
+["Setiap daerah biasanya memiliki rencana tata ruang publik berupa sarana olahraga, tempat bisnis, dan tempat wisata. Namun setelah ruang publik selesai dibangun, sebagian masyarakat belum sadar ikut merawatnya. Upaya tepat untuk mengatasi gejala sosial tersebut adalah…",["Melarang kunjungan wisatawan dari luar kota dan turis asing","Melarang pedagang kaki lima berjualan di sekitar tempat wisata","Melakukan penataan ruang publik dengan memberlakukan tata tertib","Menerapkan sanksi tegas bagi wisatawan lokal yang merusak tempat wisata","Menutup sebagian tempat wisata yang berpotensi dirusak wisatawan"],2,"Solusi yang tepat dan tidak berlebihan adalah penataan dan tata tertib agar masyarakat sadar merawat fasilitas."],
+["Perusahaan multinasional makanan cepat saji (fast food) semakin menjamur dan berpengaruh pada kehidupan sosial ekonomi, terutama anak muda. Dampak negatif gejala sosial tersebut adalah…",["Meningkatkan daya konsumsi terhadap produk olahan lokal","Menurunkan tingkat konsumsi terhadap produk impor","Memperlambat proses westernisasi pada suatu daerah","Menghambat dominasi jaringan makanan cepat saji","Mengubah pola konsumsi masyarakat menjadi kebarat-baratan"],4,"Dampak negatifnya adalah westernisasi: pola konsumsi berubah menjadi kebarat-baratan."],
+["Kemiskinan merupakan gejala sosial yang terus muncul dan tidak dikehendaki. Upaya mengatasi gejala sosial tersebut adalah…",["Memberikan bantuan tunai kepada masyarakat miskin","Menyarankan masyarakat miskin mengikuti transmigrasi ke luar Jawa","Memperbaiki sistem ekonomi agar memihak masyarakat miskin","Memberikan pelatihan dan bantuan modal kerja agar masyarakat meningkatkan keberhasilan dan kemandirian","Memberikan pendidikan dan kesehatan gratis kepada seluruh masyarakat miskin"],3,"Pelatihan dan modal kerja memberdayakan masyarakat sehingga mandiri, bukan sekadar bantuan sesaat."],
+["Di masa pandemi, orang kesulitan mencari pekerjaan dan banyak perusahaan mengurangi karyawan sehingga banyak pekerja di-PHK mendadak. Hal tersebut menunjukkan gejala sosial akibat faktor…",["Kultural","Individual","Struktural","Perubahan sosial","Ketimpangan"],2,"Faktor struktural berkaitan dengan kondisi ekonomi, politik, dan struktur masyarakat, seperti PHK massal akibat pandemi."],
+["Banyaknya remaja yang merokok merupakan penyimpangan sosial yang diakibatkan oleh…",["Sosialisasi tidak sempurna","Subkebudayaan menyimpang","Tidak adanya norma (anomi)","Perubahan sosial","Ketimpangan sosial"],0,"Remaja merokok menandakan nilai dan norma tidak terinternalisasi dengan baik: sosialisasi tidak sempurna."],
+["Pada Hari Raya Nyepi, umat Hindu tidak menyalakan lampu bahkan api. Masyarakat non-Hindu ikut memadamkan lampu rumah sebagai bentuk toleransi. Hal tersebut merupakan gejala sosial yang bersifat…",["Kumulatif","Kultural","Struktural","Positif","Negatif"],3,"Tindakan toleransi membawa dampak baik bagi kerukunan, sehingga termasuk gejala sosial positif."],
+["Dalam kehidupan jalanan, nilai dan norma tidak dijalankan sebagaimana fungsinya. Sering disisipkan kata-kata kasar dan kurang memperhatikan etika, dianggap wajar dalam kehidupan mereka. Perilaku menyimpang tersebut diakibatkan oleh…",["Mudahnya menyerap kata untuk komunikasi","Subkebudayaan yang menyimpang","Pengaruh lingkungan yang tidak sehat","Tingkat pendidikan yang tidak memadai","Sosialisasi yang tidak sempurna"],1,"Kelompok dengan nilai dan norma sendiri yang bertentangan dengan masyarakat umum disebut subkebudayaan menyimpang."],
+["Perhatikan pernyataan berikut!<br>(1) KPK melakukan operasi tangkap tangan terhadap pejabat yang korupsi.<br>(2) Gerobak pedagang kaki lima di trotoar ditertibkan petugas.<br>(3) Aparat kepolisian mensosialisasikan upaya mencegah pelecehan seksual ke sekolah.<br>(4) Pelaku pencurian motor tertangkap basah dan dibawa ke pihak berwajib.<br>(5) Pemuka agama menyampaikan ajaran untuk mengembangkan toleransi.<br><br>Pengendalian sosial secara koersif ditunjukkan oleh nomor…",["1, 2, dan 3","1, 2, dan 4","1, 2, dan 5","2, 4, dan 5","3, 4, dan 5"],1,"Koersif berarti dengan kekerasan atau paksaan (penindakan). Nomor 1, 2, dan 4 berupa penindakan; nomor 3 dan 5 bersifat persuasif."],
+["Suku Bugis memiliki tradisi mappadendang, ritual syukur kepada Tuhan atas rezeki para petani. Setiap warga bekerja sama dan mengesampingkan perbedaan sehingga menjalin kekerabatan sesama warga. Fungsi nilai sosial berdasarkan ilustrasi tersebut adalah…",["Memberikan sanksi sosial bagi individu yang tidak ikut berpartisipasi","Menunjukkan sikap toleransi dalam kampung adat","Mengubah struktur sosial antara adat di kampung dan perantauan","Menjaga solidaritas sosial dan nilai-nilai budaya","Menerapkan kehidupan modern di dalam masyarakat"],3,"Kerja sama dan kekerabatan dalam ritual adat menjaga solidaritas sosial dan melestarikan nilai budaya."],
+["Semua nilai yang berguna bagi manusia untuk dapat melaksanakan berbagai aktivitas sehari-hari dinamakan nilai…",["Vital","Moral","Religius","Material","Kebenaran"],0,"Nilai vital adalah segala sesuatu yang berguna bagi manusia untuk melakukan aktivitas sehari-hari."],
+["Segala sesuatu yang berguna bagi unsur fisik manusia disebut nilai…",["Material","Vital","Kerohanian","Dominan","Mendarah daging"],0,"Menurut Notonagoro, nilai material adalah segala sesuatu yang berguna bagi unsur fisik atau jasmani manusia."],
+["Setiap hari Rudi membantu ibunya membuat kue untuk dijual dan hasilnya digunakan untuk membayar sekolah. Tujuan perilaku Rudi berkaitan dengan jenis nilai sosial yaitu…",["Material","Vital","Spiritual","Logika","Estetika"],1,"Perilaku Rudi menghasilkan sesuatu yang berguna untuk beraktivitas (bersekolah), sehingga termasuk nilai vital."],
+["Norma yang berlaku di masyarakat pada dasarnya adalah…",["Perwujudan nilai sosial","Kesepakatan masyarakat","Kepedulian terhadap sesama","Pembatasan tindakan","Kebebasan yang mutlak"],1,"Norma lahir dari kesepakatan bersama anggota masyarakat sebagai pedoman berperilaku."],
+["Perhatikan gejala-gejala sosial berikut!<br>(1) Budaya ketimuran membiasakan masyarakat Indonesia tidak berpakaian terbuka.<br>(2) Program Keluarga Berencana banyak diikuti warga masyarakat.<br>(3) Nilai gotong royong mendorong program kerja bakti lingkungan.<br>(4) Pemerintah mengimbau warga Pulau Jawa untuk bertransmigrasi.<br>(5) Perubahan kurikulum mendorong perubahan pola belajar mengajar di sekolah.<br><br>Gejala sosial yang dipengaruhi faktor struktural ditunjukkan nomor…",["(1), (2), dan (3)","(1), (3), dan (5)","(2), (3), dan (4)","(2), (4), dan (5)","(3), (4), dan (5)"],3,"Faktor struktural berkaitan dengan kebijakan dan struktur: KB, transmigrasi, dan perubahan kurikulum. Nomor 1 dan 3 adalah faktor kultural."],
+["Rangkaian aturan bagi anggota masyarakat berisi ketentuan, perintah, kewajiban, dan larangan demi ketertiban dan keadilan, dibuat lembaga tertentu, tertulis (kitab undang-undang) atau tidak tertulis (keputusan pengadilan adat), disebut…",["Norma hukum","Norma kesopanan","Norma kesusilaan","Norma agama","Norma kebiasaan"],0,"Ciri aturan dibuat lembaga resmi dan tertulis dalam undang-undang adalah norma hukum."],
+["Perhatikan gambar berikut!<br><img src=\""+IMG+"\" alt=\"Para biksu sedang berdoa di depan patung Buddha\">Aktivitas pada gambar menunjukkan kepatuhan terhadap norma…",["Kesopanan","Agama","Hukum","Kesusilaan","Kebiasaan"],1,"Para biksu sedang beribadah, yang merupakan wujud kepatuhan terhadap norma agama."],
+["Norma sosial yang mempunyai sanksi paling tegas dan pasti adalah…",["Mores","Usage","Laws","Folkways","Cara"],2,"Laws (hukum) memiliki sanksi paling tegas dan pasti karena tertulis dan dilaksanakan aparat. (Kunci pada naskah asli tertulis D; sudah dikoreksi, guru dapat meninjau ulang.)"],
+["Setiap hari Frendi berangkat mengenakan seragam sekolah dan sepatu hitam, menyisir rambut, dan berpamitan kepada orang tuanya. Perilaku Frendi menunjukkan perilaku yang sesuai dengan norma…",["Laws","Usage","Mores","Customs","Folkways"],1,"Perilaku sopan sehari-hari yang sanksinya ringan termasuk usage (cara)."],
+["Tindakan yang tidak sesuai dengan nilai dan norma yang berlaku di masyarakat disebut…",["Nilai sosial","Norma sosial","Sosialisasi","Keteraturan sosial","Penyimpangan sosial"],4,"Perilaku yang bertentangan dengan nilai dan norma disebut penyimpangan sosial."],
+["Setiap hari Hendri berangkat ke sekolah naik sepeda motor, memakai helm SNI, membawa surat-surat penting, dan mematuhi rambu lalu lintas agar tercipta ketertiban. Ilustrasi tersebut menunjukkan Hendri melaksanakan norma…",["Budaya","Hukum","Cara","Adat istiadat","Kebiasaan"],1,"Aturan lalu lintas bersumber dari undang-undang dan memiliki sanksi, jadi termasuk norma hukum."],
+["Pak Hadi dan Bu Fani mengajarkan anaknya mematuhi tata tertib di rumah, termasuk tidak pulang terlalu malam, agar tumbuh disiplin dan tidak terjerumus perilaku menyimpang. Pola sosialisasi tersebut termasuk sosialisasi…",["Langsung","Otoriter","Primer","Sekunder","Formal"],2,"Sosialisasi pertama dalam keluarga pada masa anak-anak disebut sosialisasi primer."],
+["Ulfa, Naili, dan Rinda bersahabat sejak kuliah, tinggal di kost yang sama, dan berangkat bersama. Setelah wisuda mereka bekerja di perusahaan berbeda, tetapi tetap meluangkan waktu berkumpul dan berbagi cerita. Media sosialisasi pada uraian tersebut adalah…",["Sekolah","Keluarga","Media massa","Media elektronik","Teman sebaya"],4,"Kelompok bermain atau persahabatan dengan usia sebaya adalah agen sosialisasi teman sebaya (peer group)."],
+["Heri adalah pegawai baru di perusahaan swasta. Pada hari pertama ia memperkenalkan diri di hadapan manajer dan teman kerja, serta meminta bimbingan dan masukan. Bentuk sosialisasi yang dilakukan Heri adalah sosialisasi…",["Tidak langsung","Langsung","Sekunder","Primer","Ekualitatif"],2,"Sosialisasi di lingkungan kerja pada usia dewasa adalah sosialisasi sekunder. (Naskah asli memuat kalimat sisipan yang tidak relevan; sudah dihapus.)"],
+["Arman yang dulunya berambut hitam mengubah warna rambutnya menjadi pirang setelah melihat artis idolanya di televisi yang juga berambut pirang. Agen sosialisasi dari kasus tersebut adalah…",["Keluarga","Teman sepermainan","Sekolah formal","Lingkungan kerja","Media massa"],4,"Meniru idola dari televisi menunjukkan pengaruh agen sosialisasi media massa."],
+["Komisi Perlindungan Anak Indonesia (KPAI) menjelaskan bahwa pada 2018 kasus tawuran pelajar meningkat 14%. Kasus tersebut dikategorikan sebagai penyimpangan negatif karena…",["Memiliki sifat cenderung sementara","Memberikan dampak positif bagi kelompok","Melanggar nilai dan norma dominan","Mendapat toleransi dari masyarakat","Mengarah pada tindakan menguntungkan bagi individu"],2,"Penyimpangan negatif melanggar nilai dan norma dominan serta merugikan masyarakat."],
+["Perilaku menyimpang sekunder ditunjukkan oleh pernyataan…",["Hendro salah menggunakan seragam ketika memasuki kelas","Sewaktu kecil Ridho memanjat pohon mangga tetangga tanpa izin","Pak Mijan bekerja sebagai buruh cuci untuk menghidupi anak-anaknya","Pencuri yang sudah beberapa kali beraksi berhasil tertangkap polisi","Tina terlambat masuk kantor karena ban kendaraannya bocor"],3,"Penyimpangan sekunder dilakukan berulang sehingga menjadi gaya hidup, seperti pencuri yang beberapa kali beraksi."],
+["Berikut yang merupakan agen dalam sosialisasi sekunder adalah…",["Ayah, ibu, kakak, kakek, nenek","Keluarga, sekolah, masyarakat","Peer group, sekolah, dan media massa","Tetangga, keluarga, masyarakat","Keluarga, sekolah, dan media massa"],2,"Agen sosialisasi sekunder berada di luar keluarga: teman sebaya, sekolah, dan media massa."],
+["Bapak dan Ibu Rani dari Jawa Tengah mendidik putra-putrinya secara adat kejawen dengan bahasa Jawa krama untuk berkomunikasi dengan orang yang lebih tua. Contoh tersebut menunjukkan adanya hubungan yang erat antara…",["Sosialisasi dengan kebudayaan","Kepribadian dengan kedaerahan","Kebudayaan dengan keturunan","Lingkungan dengan kebudayaan","Kepribadian dengan lingkungan"],0,"Proses mewariskan adat dan bahasa daerah kepada anak adalah sosialisasi yang berkaitan erat dengan kebudayaan."]
+];
+const $=i=>document.getElementById(i),L="ABCDE",N=Q.length,MAXV=3;
+const TOKEN="UAS2026",PIN="guru2026",DURASI=90;
+let S=null,db=null,user=null,cfg=null,timer=null,fsOK=false,lastV=0,running=false;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const hash=async t=>{const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(t.trim().toUpperCase()));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")};
+const show=id=>{["login","exam","result","teacher"].forEach(x=>$(x).classList.toggle("hide",x!==id));scrollTo(0,0)};
+
+
+$("go").onclick=async()=>{
+ const f={nama:$("fn").value.trim(),kelas:$("fk").value.trim(),peserta:$("fp").value.trim(),sekolah:$("fs").value.trim()},t=$("ft").value.trim();
+ const er=m=>$("le").textContent=m;er("");
+ if(!f.nama||!f.kelas||!f.peserta||!f.sekolah||!t)return er("Lengkapi semua data dan token.");
+ if(t.toUpperCase()!==TOKEN)return er("Token salah.");
+ S={f,i:0,a:Array(N).fill(-1),r:Array(N).fill(false),v:0,end:Date.now()+DURASI*60000};
+ try{await document.documentElement.requestFullscreen();fsOK=true}catch(e){fsOK=false}
+ running=true;$("who").textContent=f.nama+" · "+f.kelas;show("exam");render();tick();timer=setInterval(tick,1000);
+};
+function tick(){const s=Math.max(0,Math.round((S.end-Date.now())/1000));$("tm").textContent=String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");$("tm").classList.toggle("low",s<300);if(s<=0)finish("Waktu habis")}
+function render(){
+ const q=Q[S.i];$("qn").textContent="Soal "+(S.i+1)+" dari "+N;$("qt").innerHTML=q[0];
+ $("qo").innerHTML=q[1].map((o,k)=>'<div class="opt'+(S.a[S.i]===k?" on":"")+'" data-k="'+k+'"><b>'+L[k]+"</b><span>"+esc(o)+"</span></div>").join("");
+ $("qo").querySelectorAll(".opt").forEach(e=>e.onclick=()=>{S.a[S.i]=+e.dataset.k;render()});
+ $("rg").textContent=S.r[S.i]?"✖ Batal ragu":"🚩 Ragu-ragu";$("pv").disabled=S.i==0;$("nx").disabled=S.i==N-1;
+ $("gr").innerHTML=Q.map((_,k)=>'<div class="n '+(S.r[k]?"r":S.a[k]>=0?"a":"")+(k===S.i?" c":"")+'" data-k="'+k+'">'+(k+1)+"</div>").join("");
+ $("gr").querySelectorAll(".n").forEach(e=>e.onclick=()=>{S.i=+e.dataset.k;render()});
+ const d=S.a.filter(x=>x>=0).length;$("prog").textContent="Terjawab "+d+" dari "+N;$("vc").textContent=S.v;
+}
+$("pv").onclick=()=>{S.i--;render()};$("nx").onclick=()=>{S.i++;render()};
+$("rg").onclick=()=>{S.r[S.i]=!S.r[S.i];render()};
+$("fin").onclick=()=>{const k=S.a.filter(x=>x<0).length,r=S.r.filter(Boolean).length;if(confirm((k?k+" soal belum dijawab. ":"")+(r?r+" soal ragu-ragu. ":"")+"Kumpulkan jawaban sekarang?"))finish("Dikumpulkan siswa")};
+
+function viol(why){
+ if(!running||Date.now()-lastV<1500)return;lastV=Date.now();S.v++;$("vc").textContent=S.v;
+ if(S.v>=MAXV)return finish("Melebihi batas pelanggaran");
+ $("om").textContent=why+". Pelanggaran "+S.v+" dari "+MAXV+". Pelanggaran ke-"+MAXV+" mengakhiri ujian otomatis.";$("ov").style.display="flex";
+}
+$("ob").onclick=async()=>{$("ov").style.display="none";try{if(fsOK&&!document.fullscreenElement)await document.documentElement.requestFullscreen()}catch(e){}};
+document.addEventListener("visibilitychange",()=>{if(document.hidden)viol("Anda berpindah tab atau jendela")});
+addEventListener("blur",()=>viol("Fokus jendela ujian hilang"));
+document.addEventListener("fullscreenchange",()=>{if(running&&fsOK&&!document.fullscreenElement)viol("Anda keluar dari layar penuh")});
+["contextmenu","copy","cut","paste","dragstart"].forEach(e=>document.addEventListener(e,x=>{if(running)x.preventDefault()}));
+document.addEventListener("keydown",e=>{if(!running)return;const k=e.key.toLowerCase();
+ if(k==="f12"||k==="printscreen"||k==="f5"||k==="escape"||(e.ctrlKey||e.metaKey)&&["c","v","x","u","s","p","a","r","t","w","n"].includes(k)||(e.ctrlKey||e.metaKey)&&e.shiftKey&&["i","j","c"].includes(k)){e.preventDefault();if(k==="printscreen")navigator.clipboard?.writeText("").catch(()=>{})}});
+addEventListener("beforeunload",e=>{if(running){e.preventDefault();e.returnValue=""}});
+
+async function finish(alasan){
+ if(!running)return;running=false;clearInterval(timer);$("ov").style.display="none";
+ try{if(document.fullscreenElement)await document.exitFullscreen()}catch(e){}
+ let b=0,k=0;S.a.forEach((x,i)=>{if(x<0)k++;else if(x===Q[i][2])b++});const w=N-b-k,nilai=Math.round(b/N*1000)/10;
+ $("rinfo").innerHTML=esc(S.f.nama)+" · Kelas "+esc(S.f.kelas)+" · No. Peserta "+esc(S.f.peserta)+"<br>"+esc(S.f.sekolah)+" · "+alasan;
+ $("sc").textContent=nilai;$("rs").textContent="Benar "+b+" · Salah "+w+" · Kosong "+k+" · Pelanggaran "+S.v;
+ $("pm").innerHTML=Q.map((q,i)=>{const a=S.a[i],ok=a===q[2];return '<div class="pb '+(ok?"t":"")+'"><b>'+(i+1)+".</b> "+q[0]+'<div style="margin-top:6px">Jawaban Anda: <b>'+(a<0?"Tidak dijawab":L[a]+". "+esc(q[1][a]))+"</b><br>Kunci: <b>"+L[q[2]]+". "+esc(q[1][q[2]])+'</b></div><div class="e">💡 '+esc(q[3])+"</div></div>"}).join("");
+ show("result");
+ $("kd").value=enc({n:S.f.nama,k:S.f.kelas,p:S.f.peserta,s:S.f.sekolah,b,w,x:k,v:S.v,z:nilai,t:Date.now()});
+}
+
+/* ---- Kode hasil & Mode Guru ---- */
+const SALT="uas-sos-x-2026";
+function chk(s){let h=5381;const m=s+SALT;for(let i=0;i<m.length;i++)h=((h<<5)+h+m.charCodeAt(i))>>>0;return h.toString(36)}
+function enc(o){const j=btoa(unescape(encodeURIComponent(JSON.stringify(o))));return j+"."+chk(j)}
+function dec(c){c=c.trim();const i=c.lastIndexOf(".");if(i<1)return null;const j=c.slice(0,i);if(chk(j)!==c.slice(i+1))return null;try{return JSON.parse(decodeURIComponent(escape(atob(j))))}catch(e){return null}}
+$("cp").onclick=async()=>{$("kd").select();try{await navigator.clipboard.writeText($("kd").value)}catch(e){document.execCommand("copy")}$("cp").textContent="✔ Tersalin"};
+$("tg").onclick=()=>{const p=prompt("Masukkan PIN guru:");if(p===null)return;if(p!==PIN)return alert("PIN salah.");$("tinfo").textContent="Token ujian: "+TOKEN+" · Durasi: "+DURASI+" menit";show("teacher")};
+$("bk").onclick=()=>show("login");
+$("an").onclick=()=>{const m={};let bad=0;$("kin").value.split(/\s+/).filter(Boolean).forEach(c=>{const o=dec(c);if(!o)return bad++;const k=(o.n+"|"+o.k+"|"+o.p).toLowerCase();if(!m[k]||m[k].t<o.t)m[k]=o});
+ const d=Object.values(m).sort((a,b)=>(a.k+a.n).localeCompare(b.k+b.n));
+ $("tw").innerHTML=d.length?"<table><thead><tr><th>Nama</th><th>Kelas</th><th>No. Peserta</th><th>Sekolah</th><th>Nilai</th><th>Benar</th><th>Pelanggaran</th></tr></thead><tbody>"+d.map(o=>"<tr><td>"+esc(o.n)+"</td><td>"+esc(o.k)+"</td><td>"+esc(o.p)+"</td><td>"+esc(o.s)+"</td><td><b>"+esc(o.z)+"</b></td><td>"+esc(o.b)+"/"+N+"</td><td>"+esc(o.v)+"</td></tr>").join("")+"</tbody></table>":"";
+ $("avg").textContent=(d.length?d.length+" siswa · Rata-rata "+(d.reduce((a,o)=>a+o.z,0)/d.length).toFixed(1)+" · Tertinggi "+Math.max(...d.map(o=>o.z))+" · Terendah "+Math.min(...d.map(o=>o.z)):"Belum ada kode valid.")+(bad?" · "+bad+" kode tidak valid diabaikan":"")};
+$("kc").onclick=()=>{const v=$("kcv");v.classList.toggle("hide");v.innerHTML=Q.map((q,i)=>'<div class="pb t"><b>'+(i+1)+". Kunci: "+L[q[2]]+"</b> — "+esc(q[1][q[2]])+'<div class="e">'+esc(q[3])+"</div></div>").join("")};
+</script></body></html>
